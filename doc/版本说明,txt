@@ -1,0 +1,7 @@
+springboot、springcloud、springcloud alibaba之间版本的依赖关系，以及springcloud alibaba各组件之间的版本关系
+官网版本文档地址：https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+
+本项目选择当前官方推荐的最新稳定版本（当前日期：2021-06-20）：
+Spring Cloud Version：Hoxton.SR8
+Spring Cloud Alibaba Version：2.2.5.RELEASE
+Spring Boot Version：2.3.2.RELEASE

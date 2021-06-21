@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.peng.cloudalibaba.mapper.PaymentMapper">
+
+    <resultMap id="BaseResult" type="com.peng.cloudalibaba.entity.Payment">
+        <id column="id" property="id" javaType="INTEGER"/>
+        <id column="order_id" property="order_id" jdbcType="INTEGER"/>
+        <id column="pay_money" property="pay_money" jdbcType="DECIMAL"/>
+        <id column="pay_time" property="pay_time" jdbcType="DATE"/>
+    </resultMap>
+
+    <insert id="add" parameterType="payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(order_id,pay_money,pay_time)
+        values(#{order_id},#{pay_money},now())
+    </insert>
+
+    <select id="getPaymentById" resultType="payment" parameterType="java.lang.Integer">
+        select id,order_id,pay_money,pay_time from payment where id = #{id}
+    </select>
+</mapper>
+
