@@ -6,6 +6,7 @@ import com.peng.cloudalibaba.util.ServiceResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @RestController
 @Slf4j
+@RefreshScope //在控制器类加入@RefreshScope注解使当前类下的配置支持Nacos的动态刷新功能。
 public class OrderController {
 
     @Value("${server.port}")
@@ -26,6 +28,9 @@ public class OrderController {
 
     @Value("${nacos.payment.service-url}")
     private String paymentServiceUrl;
+
+    @Value("${config.info}")
+    private String configInfo;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -36,7 +41,7 @@ public class OrderController {
     @GetMapping("/order/payment/nacos/{id}")
     public String nacos(@PathVariable("id") Integer id){
         log.info("PaymentController======>nacos the port is "+port);
-        String result = restTemplate.getForObject("http://"+paymentServiceUrl+"/payment/nacos/"+id,String.class);
+        String result = restTemplate.getForObject(paymentServiceUrl+"/payment/nacos/"+id,String.class);
         log.info("/order/payment/nacos/"+id+"--"+result);
         return result;
     }
@@ -65,5 +70,10 @@ public class OrderController {
         ServiceResult<Payment> result = paymentFeignService.getTimeOut(id,timeout==null?0L:timeout);
         log.info("/order/payment/getTimeOut/"+id+"--"+result);
         return result;
+    }
+
+    @GetMapping("/config/info")
+    public String getConfigInfo() {
+        return configInfo;
     }
 }
