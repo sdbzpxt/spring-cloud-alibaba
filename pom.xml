@@ -11,6 +11,7 @@
         <module>cloud-alibaba-order-service</module>
         <module>cloud-alibaba-api-common</module>
         <module>cloud-alibaba-payment-service</module>
+        <module>cloud-alibaba-sentinel-service</module>
     </modules>
     <packaging>pom</packaging><!--父工程必须是pom格式-->
 
@@ -20,8 +21,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring.boot.version>2.3.2.RELEASE</spring.boot.version>
-        <spring.cloud.version>Hoxton.SR8</spring.cloud.version>
-        <spring.cloud.alibaba.version>2.2.5.RELEASE</spring.cloud.alibaba.version>
+        <spring.cloud.version>Hoxton.SR9</spring.cloud.version>
+        <spring.cloud.alibaba.version>2.2.6.RELEASE</spring.cloud.alibaba.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>

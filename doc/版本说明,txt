@@ -5,3 +5,13 @@ springboot、springcloud、springcloud alibaba之间版本的依赖关系，以�
 Spring Cloud Version：Hoxton.SR8
 Spring Cloud Alibaba Version：2.2.5.RELEASE
 Spring Boot Version：2.3.2.RELEASE
+
+
+2021-07-20 调整版本为：
+Spring Cloud Version：Hoxton.SR9
+Spring Cloud Alibaba Version：2.2.6.RELEASE
+Spring Boot Version：2.3.2.RELEASE
+Sentinel Version  1.8.1
+Nacos Version 1.4.2
+
+
