@@ -8,3 +8,11 @@ spring:
 nacos:
   payment:
     service-url: http://nacos-payment-service
+
+#通过配置文件，修改ribbon策略，注意配置的类信息是不是手动写的MyIRule类
+#随机策略配置类 :com.netflix.loadbalancer.RandomRule
+#alinacos 权重策略,因为此处使用spingcloud alibaba版，重点测试NacosRule， 配置类： com.alibaba.cloud.nacos.ribbon.NacosRule
+nacos-payment-service:
+  ribbon:
+    #NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule
