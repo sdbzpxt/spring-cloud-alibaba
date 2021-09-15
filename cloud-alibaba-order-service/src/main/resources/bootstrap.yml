@@ -38,3 +38,8 @@ management:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.peng.cloudalibaba.entity #所有entity别名类所在包
+
+# 激活sentinel对feign的支持
+feign:
+  sentinel:
+    enabled: true
