@@ -2,11 +2,14 @@ spring:
   application:
     name: nacos-order-service
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc:mysql://182.92.74.220:3306/cloud_order?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://182.92.74.220:3306/cloud_order?allowMultiQueries=true&serverTimezone=Asia/Shanghai&autoReconnect=true&autoReconnectForPools=true&useSSL=false
     username: root
     password: 123456
+    connectionTimeout: 500
+    maxLifetime: 90000
+    minimumIdle: 5
+    maximumPoolSize: 30
   cloud:
     nacos:
       discovery:
