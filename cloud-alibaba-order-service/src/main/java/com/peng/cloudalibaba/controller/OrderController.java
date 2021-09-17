@@ -1,5 +1,6 @@
 package com.peng.cloudalibaba.controller;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.peng.cloudalibaba.entity.Payment;
 import com.peng.cloudalibaba.service.PaymentFeignService;
 import com.peng.cloudalibaba.util.ServiceResult;
